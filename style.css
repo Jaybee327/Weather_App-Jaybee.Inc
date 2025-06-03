@@ -2,7 +2,21 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
+
+    zoom: 1;
+    -moz-transform: scale(1);
+    -webkit-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
 }
 
 .appSkin {
@@ -12,20 +26,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(180deg, hsl(212, 100%, 65%), hsl(34, 100%, 60%));
+    background: linear-gradient(180deg, hsl(212, 100%, 65%), hsl(40, 100%, 60%));
     color: hsl(0, 0%, 90%);
+    overflow-y: hidden;
 }
 
 .appSkin.sunny {
-    background: linear-gradient(180deg, hsl(34, 100%, 60%), hsl(212, 80%, 65%));
+    background: linear-gradient(180deg, hsl(40, 100%, 55%), hsl(212, 80%, 65%));
 }
 
 .appSkin.rainy {
-    background: linear-gradient(180deg, hsl(0, 0%, 63%), hsl(0, 0%, 23%));
+    background: linear-gradient(180deg, hsl(0, 0%, 63%), hsl(0, 0%, 10%));
 }
 
 .appSkin.cloudy {
     background: linear-gradient(180deg, hsl(34, 100%, 95%), hsl(0, 0%, 65%));
+}
+
+.appSkin.night {
+    background: linear-gradient(180deg, hsl(0, 0%, 10%), hsl(0, 0%, 10%));
 }
 
 .weather-app {
@@ -103,7 +122,7 @@
 }
 
 .humidity-container {
-    color: #2c2c2ca6;
+    color: hsla(0, 0%, 50%, 0.651);
     font-size: 12px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -117,7 +136,8 @@
     flex-wrap: wrap;
     justify-content: center;
     list-style-type: none;
-    gap: 10px;
+    gap: 12px;
+    padding: 0 24px;
 }
 
 .day {

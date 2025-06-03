@@ -92,6 +92,7 @@
     background-color: transparent;
     padding: 12px;
     cursor: pointer;
+    font-size: 16px;
 }
 
 .weather-info-container {

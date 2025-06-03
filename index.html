@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaybee Weather App</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://websygen.github.io/owfont/css/owfont-regular.css" rel="stylesheet" type="text/css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+</head>
+<body class="appSkin">
+    <main class="weather-app">
+        <div class="search-container">
+            <form class="search-form" action="#">
+                <input type="text" autocomplete="off" id="search-input" class="search-input" placeholder="enter city" >
+                <datalist id="cities"></datalist>
+                <button class="search-button">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+        </div>
+        <div class="weather-info-container">
+            <article class="weather-icon-container">
+                 <i class="weather-icon owf"></i>
+            </article>
+            <section class="weather-details">
+                <figure class="city-name" id="city">
+                    <figcaption class="city-name-text">City</figcaption>
+                </figure>
+                <figcaption class="temperature" id="maindegree">
+                    <span class="temperature-value">32&deg;C</span>
+                </figcaption>
+                <section class="humidity-container">
+                    <span class="humidity-value" id="humidity">Humidity: 57%</span>
+                </section>
+            </section>
+        </div>
+        <div class="forecast-container">
+            <ul class="forecast-list">
+                <li class="day" id="mon">
+                    <p class="day-name">MON</p>
+                     <i class="day-icon owf"></i>
+                    <span class="day-temperature">20&deg;C</span>
+                </li>
+                <li class="day" id="tue">
+                    <p class="day-name">TUE</p>
+                     <i class="day-icon owf"></i>
+                    <span class="day-temperature">30&deg;C</span>
+                </li>
+                <li class="day" id="wed">
+                    <p class="day-name">WED</p>
+                     <i class="day-icon owf"></i>
+                    <span class="day-temperature">42&deg;C</span>
+                </li>
+                <li class="day" id="thu">
+                    <p class="day-name">THU</p>
+                     <i class="day-icon owf"></i>
+                    <span class="day-temperature">38&deg;C</span>
+                </li>
+                <li class="day" id="fri">
+                    <p class="day-name">FRI</p>
+                     <i class="day-icon owf"></i>
+                    <span class="day-temperature">50&deg;C</span>
+                </li>
+            </ul>
+        </div>
+    </main>
+
+    <script src="app.js" defer></script>
+</body>
+</html>

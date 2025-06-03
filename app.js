@@ -158,21 +158,30 @@ const getWeather = (city) => {
             cityElement.textContent = data.name;
             maindegree.textContent = `${Math.round(data.main.temp)}°C`;
             humidity.textContent = `Humidity: ${data.main.humidity}%`;
-            document.querySelector('.appSkin').classList.remove('sunny', 'rainy', 'cloudy');
-            const weatherId = data.weather[0].id;
-            if (weatherId >= 200 && weatherId < 300) { // Thunderstorm
-                document.querySelector('.appSkin').classList.add('rainy');
-            } else if (weatherId >= 300 && weatherId < 400) { // Drizzle
-                document.querySelector('.appSkin').classList.add('rainy');
-            } else if (weatherId >= 500 && weatherId < 600) { // Rain
-                document.querySelector('.appSkin').classList.add('rainy');
-            } else if (weatherId >= 800 && weatherId < 900) { // Clear or Clouds
-                if (weatherId === 800) { // Clear
-                    document.querySelector('.appSkin').classList.add('sunny');
-                } else { // Clouds
-                    document.querySelector('.appSkin').classList.add('cloudy');
-                }
+            
+            document.querySelector('.appSkin').classList.remove('sunny', 'rainy', 'cloudy', 'night');
+        const weatherId = data.weather[0].id;
+        const currentTime = data.dt;
+        let isNight = false;
+        if (currentTime < data.sys.sunrise || currentTime > data.sys.sunset) {
+          isNight = true;
+        }
+
+        if (isNight) {
+          document.querySelector('.appSkin').classList.add('night');
+        } else if (weatherId >= 200 && weatherId < 300) { // Thunderstorm
+            document.querySelector('.appSkin').classList.add('rainy');
+        } else if (weatherId >= 300 && weatherId < 400) { // Drizzle
+            document.querySelector('.appSkin').classList.add('rainy');
+        } else if (weatherId >= 500 && weatherId < 600) { // Rain
+            document.querySelector('.appSkin').classList.add('rainy');
+        } else if (weatherId >= 800 && weatherId < 900) { // Clear or Clouds
+            if (weatherId === 800) { // Clear
+                document.querySelector('.appSkin').classList.add('sunny');
+            } else { // Clouds
+                document.querySelector('.appSkin').classList.add('cloudy');
             }
+        }
 
             // Update the weather icon
             const now = new Date().getTime() / 1000;

@@ -32,19 +32,19 @@
 }
 
 .appSkin.sunny {
-    background: linear-gradient(180deg, hsl(40, 100%, 55%), hsl(212, 80%, 65%));
+    background: linear-gradient(180deg, #ffb31a, #5ea1ed);
 }
 
 .appSkin.rainy {
-    background: linear-gradient(180deg, hsl(0, 0%, 63%), hsl(0, 0%, 10%));
+    background: linear-gradient(180deg, #a1a1a1, #1a1a1a);
 }
 
 .appSkin.cloudy {
-    background: linear-gradient(180deg, hsl(34, 100%, 95%), hsl(0, 0%, 65%));
+    background: linear-gradient(180deg, #fff4e5, #a6a6a6);
 }
 
 .appSkin.night {
-    background: linear-gradient(180deg, hsl(0, 0%, 10%), hsl(0, 0%, 10%));
+    background: linear-gradient(180deg, #1a1a1a, #1a1a1a);
 }
 
 .weather-app {
@@ -64,6 +64,7 @@
 .search-container {
     width: 100%;
     margin-bottom: 20px;
+    z-index: 2000;
 }
 
 .search-form {
@@ -123,7 +124,7 @@
 }
 
 .humidity-container {
-    color: hsla(0, 0%, 50%, 0.651);
+    color: hsla(0, 0%, 60%, 0.8);
     font-size: 12px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
